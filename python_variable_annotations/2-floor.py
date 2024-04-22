@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""  Basic annotations -  floor   """
+
+import math
 
 def floor(n: float) -> int:
-    """ function floor """
-    return (int(n))
+    """Returns the floor of the given float."""
+    return (math.floor(n))
