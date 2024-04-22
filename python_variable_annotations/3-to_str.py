@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+"""  Basic annotations - to string """
+
 
 def to_str(n: float) -> str:
-    """Returns the string representation of the given float."""
-    return str(n)
+    """  function to_str """
+    return (str(n))
