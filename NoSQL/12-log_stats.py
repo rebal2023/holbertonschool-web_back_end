@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """log stats from collection
 """
-from pymongo import MongoClient
+from pymongo import MongoClient # type: ignore
 
 
 METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE"]
