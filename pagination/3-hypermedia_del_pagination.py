@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-Deletion-resilient hypermedia pagination
+Description: The goal here is that if between two queries, certain rows are
+             removed from the dataset, the user does not miss items from
+             dataset when changing page
 """
 
 import csv
 import math
-from typing import List, Dict, Any
+from typing import List, Dict
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -13,6 +16,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        ''' Initialize instance. '''
         self.__dataset = None
         self.__indexed_dataset = None
 
@@ -38,36 +42,31 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict[str, Any]:
-        """Returns hypermedia pagination information based on index.
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        ''' Return dict of pagination data.
+            Dict key/value pairs consist of the following:
+              index - the start index of the page
+              next_index - the start index of the next page
+              page_size
+              page_size - the number of items on the page
+              data - the data in the page itself '''
+        assert 0 <= index < len(self.dataset())
 
-        Args:
-            index (int): The start index of the page.
-            page_size (int): The number of items per page.
+        indexed_dataset = self.indexed_dataset()
+        indexed_page = {}
 
-        Returns:
-            Dict[str, Any]: A dictionary containing pagination information.
-        """
-        assert isinstance(index, int) and 0 <= index < len(self.indexed_dataset()), "Index is out of range"
+        i = index
+        while (len(indexed_page) < page_size and i < len(self.dataset())):
+            if i in indexed_dataset:
+                indexed_page[i] = indexed_dataset[i]
+            i += 1
 
-        data = []
-        next_index = None
-        total_pages = math.ceil(len(self.indexed_dataset()) / page_size)
-
-        if index is not None:
-            for i in range(index, min(index + page_size, len(self.indexed_dataset()))):
-                data.append(self.indexed_dataset()[i])
-            next_index = min(index + page_size, len(self.indexed_dataset()))
+        page = list(indexed_page.values())
+        page_indices = indexed_page.keys()
 
         return {
-            "index": index,
-            "next_index": next_index,
-            "page_size": len(data),
-            "data": data,
-            "total_pages": total_pages
+            'index': index,
+            'next_index': max(page_indices) + 1,
+            'page_size': len(page),
+            'data': page
         }
-
-if __name__ == "__main__":
-    server = Server()
-
-    print(server.get_hyper_index(300000, 100))
