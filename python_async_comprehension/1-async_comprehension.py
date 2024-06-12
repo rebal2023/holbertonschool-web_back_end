@@ -7,6 +7,6 @@ async_generator = __import__('0-async_generator').async_generator
 
 
 async def async_comprehension() -> Vector:
-    ''' Function that return a list '''
+    " Function that return a list"
     Final = [y async for y in async_generator()]
     return (Final)
