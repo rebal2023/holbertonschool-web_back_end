@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Basic Async Syntax
+The basics of async
 """
 
 import random
