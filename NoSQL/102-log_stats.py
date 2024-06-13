@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script that provides stats about Nginx logs stored in MongoDB
+script that provides stats about top 10 IPs
 """
 
 from pymongo import MongoClient # type: ignore
