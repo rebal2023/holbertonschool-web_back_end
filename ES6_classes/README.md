@@ -1,1 +1,1 @@
-Read me File
+ES6 classes
