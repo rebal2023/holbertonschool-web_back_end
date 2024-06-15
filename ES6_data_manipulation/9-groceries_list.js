@@ -1,4 +1,4 @@
-const groceriesList = () => new Map()
+ const groceriesList = () => new Map()
   .set('Apples', 10)
   .set('Tomatoes', 10)
   .set('Pasta', 1)
