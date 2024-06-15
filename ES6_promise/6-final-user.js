@@ -8,7 +8,7 @@ const handleProfileSignup = async (
 ) => {
   const result = [];
   try {
-    const user = await signUpUser(firstName, lastName);
+  const user = await signUpUser(firstName, lastName);
     result.push({ status: 'fulfilled', value: user });
     await uploadPhoto(fileName);
   } catch (error) {
