@@ -1,5 +1,5 @@
 function getCurrentYear() {
-    11;rgb:2b2b/2b2b/2b2b11;rgb:2b2b/2b2b/2b2bconst date = new Date();
+  const date = new Date();
   return date.getFullYear();
 }
 

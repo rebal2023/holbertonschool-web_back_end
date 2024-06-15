@@ -4,5 +4,5 @@ export default function createIteratorObject(report) {
     result = [...result, ...value];
   }
 
-  return result;
+   return result;
 }
