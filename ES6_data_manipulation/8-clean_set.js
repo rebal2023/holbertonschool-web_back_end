@@ -1,4 +1,4 @@
- const cleanSet = (set, string) => {
+const cleanSet = (set, string) => {
   if (!string || !string.length) return '';
   let value = '';
   for (const el of set) {
