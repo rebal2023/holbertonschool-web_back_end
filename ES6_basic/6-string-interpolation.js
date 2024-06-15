@@ -1,5 +1,5 @@
 function getSanFranciscoDescription() {
-  const year = 2017;
+    11;rgb:2b2b/2b2b/2b2bconst year = 2017;
   const budget = {
     income: '$119,868',
     gdp: '$154.2 billion',
@@ -12,4 +12,3 @@ of ${budget.gdp}, and a GDP per capita of ${budget.capita}.`;
 }
 
 module.exports = getSanFranciscoDescription;
-s

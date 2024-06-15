@@ -1,5 +1,5 @@
 export default function createReportObject(employeesList) {
-  return {
+    11;rgb:2b2b/2b2b/2b2breturn {
     allEmployees: {
       ...employeesList,
     },
@@ -8,4 +8,3 @@ export default function createReportObject(employeesList) {
     },
   };
 }
-s
