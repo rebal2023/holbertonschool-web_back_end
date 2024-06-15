@@ -1,4 +1,4 @@
-const updateStudentGradeByCity = (students, city, newGrade) => students
+ const updateStudentGradeByCity = (students, city, newGrade) => students
   .filter((student) => student.location === city)
   .map((item) => {
     const newRecord = { ...item };
