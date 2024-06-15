@@ -1,4 +1,4 @@
- const weakMap = new WeakMap();
+const weakMap = new WeakMap();
 
 const queryAPI = (endpoint) => {
   let total = weakMap.get(endpoint) || 0;
