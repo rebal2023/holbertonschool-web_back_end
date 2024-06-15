@@ -1,9 +1,8 @@
 function signUpUser(firstName, lastName) {
-  return Promise.resolve({
+    11;rgb:2b2b/2b2b/2b2breturn Promise.resolve({
     firstName,
     lastName,
   });
 }
 
 export default signUpUser;
-s
